@@ -12,7 +12,13 @@ function Posts() {
   return (
     <div className='posts'>
       <h1>Post List</h1>
-      <ul>{/* Render a list of Links from the posts object   */}</ul>
+      <ul>{/* Render a list of Links from the posts object   */}
+      {posts.map((post, index) => (
+          <li key={index}>
+            <Link href={post.path}>{post.name}</Link>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
